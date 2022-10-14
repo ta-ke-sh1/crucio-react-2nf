@@ -1,0 +1,54 @@
+
+.navigation{
+   position: fixed;
+   top: 0;
+   z-index: 100;
+   width: 100%;
+}
+
+.nav-bar{
+   width: 100%;
+   height: fit-content;
+   background-color: #000000b4;
+   opacity: 0.9;
+   overflow: hidden;
+   position: relative;
+}
+
+.envato-bar{
+   width: 100%;
+   height: fit-content;
+   background-color: #262626;
+   overflow: hidden;
+   position: relative;
+}
+
+.envato-bar .nav-item{
+   float: right;
+   display: block;
+   padding: 16px 16px;
+   text-decoration: none;
+   color: white;
+}
+
+.nav-bar .nav-item{
+   float: right;
+   display: block;
+   color: #666;
+   text-align: center;
+   padding: 25px 16px;
+   text-decoration: none;
+   color: white;
+}
+
+.nav-bar img{
+   margin-left: 40px;
+   position: absolute;
+   top: 50%;
+   -ms-transform: translateY(-50%);
+   transform: translateY(-50%);
+}
+
+#btn-buy{
+   float: left;
+}

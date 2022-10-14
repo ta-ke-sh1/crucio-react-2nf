@@ -1,0 +1,519 @@
+.line{
+   display: block;
+   width: 90px;
+   border-bottom: 4px solid #AD00FF;
+   margin: auto;
+   left: 50%;
+   margin-top: 10px;
+   margin-bottom: 40px;
+}
+
+body{
+   max-width: 100%;
+   overflow-x : hidden;
+}
+
+.m-container {
+   width: 100%;
+   height: 100vh;
+   align-items: center;
+   position: relative;
+}
+
+.f-container {
+   padding: 120px 0px;
+   width: 100%;
+   height: fit-content;
+   align-items: center;
+   position: relative;
+   text-align: center;
+}
+
+.m-container .content h1, .line, h2{
+   text-align: center;
+}
+
+.m-container .content h1{
+   font-size: 35px;
+   margin-bottom: 20px;
+}
+
+.m-container .content h2{
+   font-size: 25px;
+   letter-spacing: 5px;
+   margin-bottom: 20px;
+}
+
+.m-container .content{
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+}
+
+
+html {
+   scroll-behavior: smooth;
+}
+
+.navigation{
+   box-shadow: rgba(173, 0, 255, 0.35) 0px 5px 15px;
+}
+
+.offer{
+   padding: 120px;
+}
+
+#services{
+   height: 110vh;
+}
+
+.services-grid{
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+   padding: 10px;
+}
+
+.services-grid .grid-item{
+   min-width: 250px;
+   padding: 20px;
+   font-size: 24px;
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+.services-grid .grid-item svg{
+   fill: rgb(173, 0, 255);
+   margin-bottom: 10px;
+}
+
+.our-abilities{
+   display: grid;
+   grid-template-columns: auto auto auto;
+}
+
+.our-abilities h1{
+   font-size: 30px;
+   margin-bottom: 20px;
+}
+
+.our-abilities .grid-item{
+   min-width: 350px;
+   padding: 60px 80px;
+   text-align: left;
+   color: white;
+}
+
+.associates-grid{
+   display: grid;
+   grid-template-columns: auto auto auto auto auto auto;
+}
+
+.associates-grid .grid-item{
+   padding: 50px;
+   text-align: left;
+      color: white;
+}
+
+#toAbout{
+   position: absolute;
+   bottom: 40px;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+#toAbout svg{
+   fill: #AD00FF;
+}
+
+#up-button{
+   position: fixed;
+   right: 40px;
+   bottom: 40px;
+   margin: 0;
+   z-index: 1000;
+   opacity: 0;
+   transition-duration: 0.9s;
+}
+
+#up-button svg{
+   fill: #AD00FF;
+}
+
+.button{
+   width: fit-content;
+   display: block;
+   text-decoration: none;
+   color: white;
+   padding: 15px 25px;
+   border: 3px solid white;
+   transition-duration: 0.7s;
+   letter-spacing: 3px;
+   margin: auto;
+   margin-top: 30px;
+   left: 50%;
+}
+
+.button:hover{
+   background-color: white;
+   color: #AD00FF;
+}
+
+.team-card-container{
+   width: 80%;
+   display: grid;
+   grid-gap: 60px;
+   grid-template-columns: auto auto auto;
+}
+
+.team-card-container .card{
+   width: 20vw;
+   height: 50vh;
+   overflow: hidden;
+}
+
+.card .image{
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   z-index: 0;
+   position: absolute;
+   transition-duration: 0.9s;
+   background-position: center center;
+}
+
+.card .info{
+   transition-duration: 0.7s;
+   opacity: 0;
+   align-items: center;
+   position: relative;
+   z-index: 1;
+   padding-top: 30%;
+   background-color: rgb(174, 0, 255, 0.8);
+   width: 100%;
+   height: 100%;
+}
+
+.card .info h1 {
+   font-size: 24px;
+   transform: translateY(-500%);
+   transition-duration: 0.7s;
+   color: white;
+   margin-bottom: 20px;
+}
+
+.card .info p {
+   transform: translateY(70%);
+   transition-duration: 0.7s;
+   color: white;
+   margin-bottom: 40px;
+}
+
+.icon-row{
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+}
+
+.icon-row .icon{
+   padding: 10px;
+   fill: white;
+}
+
+.team-card-container .image{
+   width: 100%;
+   height: 100%;
+}
+
+#counter{
+   padding: 170px 0px;
+}
+
+.counter-grid{
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%,-50%);
+   width: 70%;
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+}
+
+.counter-grid .grid-item{
+   padding: 10px;
+   color: white;
+   font-weight: 100;
+}
+
+#associates{
+   background-color: #F7F7F7;
+}
+
+.associates-grid{
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   width: 70%;
+   display: grid;
+   grid-template-columns: auto auto auto auto auto auto;
+}
+
+.associate-logo{
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 90px;
+   width: 90px;
+   opacity: 0.6;
+   transition-duration: 0.3s;
+}
+
+#testimonials .content{
+   position: relative;
+   padding-bottom: 100px;
+}
+
+#testimonials .content .t-carousel-container{
+   position: absolute;
+   width: 70vw;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+.associate-logo:hover{
+   opacity: 1;
+}
+
+.textInput{
+   width: 100%;
+   border:none;
+   border-bottom: 1px solid gray;
+   padding: 25px 10px;
+   outline: none;
+}
+
+.textArea{
+   transition-duration: 0.3s;
+   width: 100%;
+   border: none;
+   border-bottom: 1px solid gray;
+}
+
+.textArea:focus{
+   outline: none;
+}
+
+#contact{
+   padding-bottom: 300px;
+}
+
+.submit-button {
+   color: #AD00FF;
+   padding: 15px 45px;
+   border: 3px solid #AD00FF;
+   transition-duration: 0.5s;
+   position: absolute;
+   margin-top: 45px;
+   right: 15px;
+}
+
+.submit-button:hover{
+   background-color: #AD00FF;
+   color: white;
+}
+
+#subscribe{
+   color: #AD00FF;
+   border: 3px solid #AD00FF;
+}
+
+#subscribe:hover{
+   background-color: #AD00FF;
+   color: white;
+}
+
+#footer-crucio{
+   align-items: center;
+}
+
+#footer-crucio .footer-crucio-container{
+   padding: 80px 0px;
+   margin: auto;
+   width: 50%;
+   position: relative;
+}
+
+.icons-bar a svg{
+   fill: white;
+}
+
+.icons-bar a svg:hover{
+   fill: #AD00FF;
+}
+.projects-container .grid-item{
+   position: relative;
+}
+
+.portfolio-info{
+   background-color: red;
+}
+
+.portfolio-image{
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   position: absolute;
+}
+
+#footer .row{
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+}
+
+#footer-bar{
+   position: relative;
+   width: 100%;
+   padding: 10px;
+   color: white;
+   background-color: #56007F;
+}
+
+
+.projects-container{
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+}
+
+.projects-container .grid-item{
+   overflow: hidden;
+}
+
+.projects-container .grid-item .info{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: rgb(173, 0, 255, 0.8);
+   width: 100%;
+   height: 100%;
+   opacity: 0;
+   transition-duration: 0.7s;
+   z-index: 2;
+}
+
+.projects-container .grid-item .info h1 {
+   margin-top: 10px;
+   font-size: 28px;
+   transition-duration: 0.7s;
+   transform: translateY(0%);
+   color: white;
+}
+
+.projects-container .grid-item .info p {
+   font-size: 16px;
+   transition-duration: 0.7s;
+   transform: translateY(300%);
+   color: white;
+}
+
+.projects-container .grid-item .image{
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   z-index: 0;
+   position: absolute;
+   transition-duration: 0.9s;
+   background-position: center center;
+   transition-duration: 0.7s;
+}
+
+.projects-container .grid-item{
+   position: relative;
+   background-color: rgba(255, 255, 255, 0.8);
+   font-size: 30px;
+   text-align: center;
+   height: 240px;
+   max-width: calc(25vw);
+}
+
+.projects-type{
+   margin-bottom: 30px;
+}
+
+.item-type{
+   display: inline;
+   margin: 0px 30px;
+}
+
+.selected{
+   color: #AD00FF;
+}
+
+.invisible{
+   visibility: hidden;
+}
+
+body{
+   font-family: 'Montserrat', sans-serif;
+}
+
+body p{
+   font-size: 14px;
+   line-height: 2em;
+   font-weight: 300;
+   text-align: center
+}
+
+#hidden{
+   width: 0px;
+   height: 0px;
+   overflow: hidden;
+}
+
+.icons-bar a{
+   margin: 0px 18px;
+}
+
+.carousel-image{
+   height: 100%;
+   width: 100%;
+   background-size: cover;
+   z-index: 10;
+}
+
+#landing-carousel .carousel-inner{
+   position: absolute;
+   top: 0;
+   z-index: -10;
+}
+
+#landing-carousel .carousel-inner .image{
+   width: 100vw;
+   height: 100vh;
+   background-size: cover;
+}
+
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
+
+
+.purple-bg{
+   background-color: #AD00FF
+}
+
+.height-20{
+   height: 20px;
+}

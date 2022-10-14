@@ -1,0 +1,32 @@
+.card:hover .image {
+   transform: scale(1.2);
+   background-position: center left;
+}
+
+.card:hover .info {
+   opacity: 1;
+}
+
+.card:hover .info h1 {
+   transform: translateY(40%);
+}
+
+.card:hover .info p {
+   transform: translateY(30%);
+}
+
+.projects-container .grid-item:hover .info{
+   opacity: 1;
+}
+
+.projects-container .grid-item:hover .image{
+   transform: scale(1.2);
+}
+
+.projects-container .grid-item:hover .info h1{
+   transform: translateY(200%);
+}
+
+.projects-container .grid-item:hover .info p{
+   transform: translateY(210%);
+}
