@@ -25,7 +25,7 @@ export default function Contact(){
             </div>
             <div className="row">
                <div className="col">
-                  <a href="/" className="submit-button" id="submit" style={{ "margin-right" : "15%"}}>
+                  <a href="/" className="submit-button" id="submit" style={{ "marginRight" : "15%"}}>
                      SEND
                   </a>
                </div>

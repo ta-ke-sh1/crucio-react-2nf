@@ -8,20 +8,20 @@ export default function Navigation(){
             <img src={"/assets/logo/envato-white.png"} alt="" height="35px" width="auto" />
          </a>
          <a className="nav-item" href="/" style={{
-               "background-color": "green", 
+               "backgroundColor": "green", 
                "padding": "5px 15px",
-               "border-radius": "5px",
+               "borderRadius": "5px",
             }}>
             Buy Now</a>
       </div>
       <div className="nav-bar" id="main-nav" style={{
-               "background-color": "rgb(25, 25, 25)", 
-               "z-index": 10,
+               "backgroundColor": "rgb(25, 25, 25)", 
+               "zIndex": 10,
             }}
          >
-         <a href="#portfolio" className="nav-item" style={{"margin-right": "40px"}}>Contact</a>
+         <a href="#portfolio" className="nav-item" style={{"marginRight": "40px"}}>Contact</a>
          <a href="/blog.html" className="nav-item">Blog</a>
-         <a href="#contact" className="nav-item">Portfolio</a>
+         <a href="#portfolio" className="nav-item">Portfolio</a>
          <a href="#team" className="nav-item">Team</a>
          <a href="#services" className="nav-item">Services</a>
          <a href="#about" className="nav-item">About</a>

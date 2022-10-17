@@ -3,11 +3,11 @@ import React from "react";
 export default function Footer(){
    return(
       <>
-      <div id="footer-crucio" style={{"background-color": "rgb(0, 0, 0)"}}>
+      <div id="footer-crucio" style={{"backgroundColor": "rgb(0, 0, 0)"}}>
          <div className="footer-crucio-container">
             <center>
                <a href="/">
-                  <img src={require('././assets/logo/crucioTextLogo.png')} style={{"margin-bottom": "40px"}} height="65px" width="auto"
+                  <img src={require('././assets/logo/crucioTextLogo.png')} style={{"marginBottom": "40px"}} height="65px" width="auto"
                      alt="" />
                </a>
                <div className="icons-bar">

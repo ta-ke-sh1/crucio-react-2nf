@@ -1,93 +1,68 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Carousel from 'react-bootstrap/Carousel';
 
 export default function Portfolio(){
+
+   const [portfolioItems, setPortfolioItems] = useState([]);
+   const [isAdded, setAdded] = useState(false);
+   const [currentSort, setCurrentSort] = useState(null);
+
+   useEffect(() => {
+      setPortfolioItems(portfolio);
+      setCurrentSort(document.getElementById('select-All'))
+   }, []);
+
+   function sort(code){
+      const sortButton = document.getElementById('select-'+code);
+
+      if(code === "All"){
+         if(!isAdded){
+            portfolio.push({
+               "id":"project-9",
+               "title":"Project #9",
+               "description":"Description",
+               "image":"url(/assets/work/work8.jpg)",
+               "type": ["D"]
+            },)
+         }
+         setAdded(true);
+         setPortfolioItems(portfolio);
+      } else {
+         const newList = portfolio.filter((item) => item.type.includes(code));
+         setPortfolioItems(newList);
+      }
+
+      currentSort.classList.remove("selected");
+      setCurrentSort(sortButton);
+      sortButton.classList.add('selected');
+      return;
+   }
+
    return(
       <>
-      <div id="portfolio" className="f-container" style={{"background-color": "#F7F7F7", "padding-bottom": "60px"}}>
+      <div id="portfolio" className="f-container" style={{"backgroundColor": "#F7F7F7", "paddingBottom": "60px"}}>
          <div className="content">
             <h1>OUR PORTFOLIO</h1>
             <br />
             <div className="line"></div>
             <div className="projects-type">
-               <div className="item-type selected height-20" id="select-all">All</div>
-               <div className="item-type height-20" id="select-graphic">Graphic Design</div>
-               <div className="item-type height-20" id="select-web">Web Design</div>
-               <div className="item-type height-20" id="select-development">Web Development</div>
+               <div className="item-type selected height-20" id="select-All" onClick={() => sort("All")} >All</div>
+               <div className="item-type height-20" id="select-A" onClick={() => sort("A")} >Graphic Design</div>
+               <div className="item-type height-20" id="select-B" onClick={() => sort("B")} >Web Design</div>
+               <div className="item-type height-20" id="select-C" onClick={() => sort("C")} >Web Development</div>
             </div>
             <div className="projects-container" id="projects">
-               <div className="grid-item" id="project-1">
-                  <div className="info">
-                     <h1>Project #1</h1>
-                     <p>Description</p>
-                  </div>
-                  <div className="image" style={{"background-image": "url(/assets/work/work1.jpg)"}}></div>
-               </div>
-               <div className="grid-item" id="project-2">
-                  <div className="info">
-                     <h1>Project #2</h1>
-                     <p>Description</p>
-                  </div>
-                  <div className="image" style={{"background-image": "url(/assets/work/work2.jpg)"}}></div>
-               </div>
-               <div className="grid-item" id="project-3">
-                  <div className="info">
-                     <h1>Project #3</h1>
-                     <p>Description</p>
-                  </div>
-                  <div className="image" style={{"background-image": "url(/assets/work/work3.jpg)"}}></div>
-               </div>
-               <div className="grid-item" id="project-4">
-                  <div className="info">
-                     <h1>Project #4</h1>
-                     <p>Description</p>
-                  </div>
-                  <div className="image" style={{"background-image": "url(/assets/work/work4.jpg)"}}></div>
-               </div>
-               <div className="grid-item" id="project-5">
-                  <div className="info">
-                     <h1>Project #5</h1>
-                     <p>Description</p>
-                  </div>
-                  <div className="image" style={{"background-image": "url(/assets/work/work5.jpg)"}}></div>
-               </div>
-               <div className="grid-item" id="project-6">
-                  <div className="info">
-                     <h1>Project #6</h1>
-                     <p>Description</p>
-                  </div>
-                  <div className="image" style={{"background-image": "url(/assets/work/work6.jpg)"}}></div>
-               </div>
-               <div className="grid-item" id="project-7">
-                  <div className="info">
-                     <h1>Project #7</h1>
-                     <p>Description</p>
-                  </div>
-                  <div className="image" style={{"background-image": "url(/assets/work/work7.jpg)"}}></div>
-               </div>
-               <div className="grid-item" id="project-8">
-                  <div className="info">
-                     <h1>Project #8</h1>
-                     <p>Description</p>
-                  </div>
-                  <div className="image" style={{"background-image": "url(/assets/work/work8.jpg)"}}></div>
-               </div>
+               {portfolioItems.map((item) => <PortfiolioItem key={item.id} id={item.id} title={item.title} description={item.description} image={item.image} />)}
             </div>
          </div>
          <br />
-         <a href="/" className="button" id="subscribe">
+         <div className="button" id="subscribe" onClick={() => sort("All")}>
             LOAD MORE
-         </a>
+         </div>
       </div>
 
       <div id="hidden">
-         <div className="grid-item" id="project-9">
-            <div className="info">
-               <h1>Project #8</h1>
-               <p>Description</p>
-            </div>
-            <div className="image" style={{"background-image": "url(./assets/work/work1.jpg)"}}></div>
-         </div>
+      <PortfiolioItem id={portfolio[0].id} title={portfolio[0].title} description={portfolio[0].description} image={portfolio[0].image} />
       </div>
 
       <div className="f-container">
@@ -98,22 +73,22 @@ export default function Portfolio(){
                   <input type="text" name="" className="textInput" placeholder="Enter your email" />
                </div>
                <br /> <br /> <br />
-               <div class="row" style={{"width": "10%"}}>
-                  <a href="/" className="button" id="subscribe">
+               <div className="row" style={{"width": "10%"}}>
+                  <div className="button" id="subscribe">
                      SEND
-                  </a>
+                  </div>
                </div>
          </center>
       </div>
       <div id="want-to-contact" className="f-container purple-bg">
          <div className="content">
-            <h1 style={{"color": "white", "font-size": "24px", "letter-spacing": "5px"}}>WANT TO DISCUSS YOUR NEW PROJECT?</h1>
+            <h1 style={{"color": "white", "fontSize": "24px", "letterSpacing": "5px"}}>WANT TO DISCUSS YOUR NEW PROJECT?</h1>
             <br />
             <a href="#contact" className="button">CONTACT US</a>
          </div>
       </div>
-      <div id="testimonials" className="f-container" style={{"background-color": "rgb(0, 0, 0)"}}>
-         <div class="content">
+      <div id="testimonials" className="f-container" style={{backgroundColor: "rgb(0, 0, 0)"}}>
+         <div className="content">
             <h1 style={{"color": "white"}}>TESTIMONIALS</h1>
             <div className="line"></div>
             <div className="t-carousel-container">
@@ -131,7 +106,7 @@ export default function Portfolio(){
                            cillum
                            dolore eu fugiat nulla pariatur.
                            <br />
-                           <span style={{"font-style":"italic"}}>- Jim P. -</span>
+                           <span style={{"fontStyle":"italic"}}>- Jim P. -</span>
                         </p>
                      </Carousel.Item>
                      <Carousel.Item>
@@ -146,7 +121,7 @@ export default function Portfolio(){
                            cillum
                            dolore eu fugiat nulla pariatur.
                            <br />
-                           <span style={{"font-style":"italic"}}>- Morgan F. -</span>
+                           <span style={{"fontStyle":"italic"}}>- Morgan F. -</span>
                         </p>
                      </Carousel.Item>
                      <Carousel.Item>
@@ -161,7 +136,7 @@ export default function Portfolio(){
                            cillum
                            dolore eu fugiat nulla pariatur.
                            <br />
-                           <span style={{"font-style":"italic"}}>- John K. -</span>
+                           <span style={{"fontStyle":"italic"}}>- John K. -</span>
                         </p>
                      </Carousel.Item>
                   </Carousel>
@@ -172,26 +147,96 @@ export default function Portfolio(){
       <div id="associates" className="f-container">
          <div className="associates-grid">
             <div className="grid-item">
-               <div className="associate-logo" style={{"background-image": "url(./assets/logo/client-1.png)"}}></div>
+               <div className="associate-logo" style={{backgroundImage: "url(./assets/logo/client-1.png)"}}></div>
             </div>
             <div className="grid-item">
-               <div class="associate-logo" style={{ backgroundImage: "url(./assets/logo/client-2.png)"}}></div>
+               <div className="associate-logo" style={{ backgroundImage: "url(./assets/logo/client-2.png)"}}></div>
             </div>
             <div className="grid-item">
-               <div class="associate-logo" style={{ backgroundImage: "url(./assets/logo/client-3.png)"}}></div>
+               <div className="associate-logo" style={{ backgroundImage: "url(./assets/logo/client-3.png)"}}></div>
             </div>
             <div className="grid-item">
-               <div class="associate-logo" style={{ backgroundImage: "url(./assets/logo/client-4.png)"}}></div>
+               <div className="associate-logo" style={{ backgroundImage: "url(./assets/logo/client-4.png)"}}></div>
             </div>
             <div className="grid-item">
-               <div class="associate-logo"style={{"background-image": "url(./assets/logo/client-5.png)"}}></div>
+               <div className="associate-logo"style={{ backgroundImage: "url(./assets/logo/client-5.png)"}}></div>
             </div>
             <div className="grid-item">
-               <div class="associate-logo" style={{"background-image": "url(./assets/logo/client-6.png)"}}></div>
+               <div className="associate-logo" style={{ backgroundImage: "url(./assets/logo/client-6.png)"}}></div>
             </div>
          </div>
       </div>
       </>
    )
-   
 }
+
+const PortfiolioItem = (props) => {
+   return(
+      <div className="grid-item" id={props.id}>
+         <div className="info">
+            <h1>{props.title}</h1>
+            <p>{props.description}</p>
+         </div>
+         <div className="image" style={{"backgroundImage": props.image}}></div>
+      </div>
+   )
+}
+
+const portfolio = [
+   {
+      "id":"project-1",
+      "title":"Project #1",
+      "description":"Description",
+      "image":"url(/assets/work/work1.jpg)",
+      "type": ["A", "B"]
+   },
+   {
+      "id":"project-2",
+      "title":"Project #2",
+      "description":"Description",
+      "image":"url(/assets/work/work2.jpg)",
+      "type": ["A"]
+   },
+   {
+      "id":"project-3",
+      "title":"Project #3",
+      "description":"Description",
+      "image":"url(/assets/work/work3.jpg)",
+      "type": ["A", "C"]
+   },
+   {
+      "id":"project-4",
+      "title":"Project #4",
+      "description":"Description",
+      "image":"url(/assets/work/work4.jpg)",
+      "type": ["B"]
+   },
+   {
+      "id":"project-5",
+      "title":"Project #5",
+      "description":"Description",
+      "image":"url(/assets/work/work5.jpg)",
+      "type": ["B","C"]
+   },
+   {
+      "id":"project-6",
+      "title":"Project #6",
+      "description":"Description",
+      "image":"url(/assets/work/work6.jpg)",
+      "type": ["C"]
+   },
+   {
+      "id":"project-7",
+      "title":"Project #7",
+      "description":"Description",
+      "image":"url(/assets/work/work7.jpg)",
+      "type":["A"] 
+   },
+   {
+      "id":"project-8",
+      "title":"Project #8",
+      "description":"Description",
+      "image":"url(/assets/work/work8.jpg)",
+      "type": ["A", "B"]
+   },
+]
