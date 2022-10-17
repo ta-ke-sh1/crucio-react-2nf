@@ -30,3 +30,29 @@
 .projects-container .grid-item:hover .info p{
    transform: translateY(210%);
 }
+
+.leftToRight{
+   animation: ltr 1s ease-out;
+}
+
+@keyframes ltr { 
+   0% {
+      transform: translateX(-200%);
+  }
+  100% { 
+     transform: translateX(0%);
+  }
+}
+
+.rightToLeft{
+   animation: rtl 1s ease-out;
+}
+
+@keyframes rtl { 
+   0% {
+       transform: translateX(200%);
+   }
+   100% { 
+      transform: translateX(0%);
+   }
+}
