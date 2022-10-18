@@ -3,14 +3,16 @@ import React from "react";
 export default function Team(){
    return(
       <>
-      <div id="team" className="m-container">
-         <div className="content">
-            <h1>OUR TEAM</h1>
-            <div className="line"></div>
-            <div className="team-card-container">
-              {members.map((item) => <Card id={item.id} key={item.name} name={item.name} position={item.position} imgUrl={item.imgUrl} />)}
+      <div id="team" className="f-container">
+         <center>
+            <div className="content">
+               <h1>OUR TEAM</h1>
+               <div className="line"></div>
+               <div className="team-card-container">
+               {members.map((item) => <Card id={item.id} key={item.name} name={item.name} position={item.position} imgUrl={item.imgUrl} />)}
+               </div>
             </div>
-         </div>
+         </center>
       </div>
       <section className="numbers">
          <div id="counter" className="f-container purple-bg">

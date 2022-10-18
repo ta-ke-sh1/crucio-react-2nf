@@ -1,4 +1,4 @@
-@media only screen and (min-width: 800px) {
+@media only screen and (max-width: 890px) {
    .our-abilities{
       grid-template-columns: auto;
    }
@@ -203,14 +203,16 @@ html {
 }
 
 .team-card-container{
-   width: 80%;
+   margin-left: 2%;
+   width: 70%;
    display: grid;
    grid-gap: 60px;
+   margin-bottom: 5%;
 }
 
 .team-card-container .card{
-   width: 20vw;
    min-width: 400px;
+   width: 20vw;
    height: 50vh;
    overflow: hidden;
 }
