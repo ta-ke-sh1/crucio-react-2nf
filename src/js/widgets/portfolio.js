@@ -56,7 +56,7 @@ export default function Portfolio(){
             </div>
          </div>
          <br />
-         <div className="button" id="subscribe" onClick={() => sort("All")}>
+         <div className="button purple-btn" onClick={() => sort("All")}>
             LOAD MORE
          </div>
       </div>
@@ -67,24 +67,22 @@ export default function Portfolio(){
 
       <div className="f-container">
          <center>
-            <h2>Subscribe To Our Newsletter</h2>\
-               <br />
-               <div className="row" style={{"width": "60%"}}>
-                  <input type="text" name="" className="textInput" placeholder="Enter your email" />
-               </div>
-               <br /> <br /> <br />
-               <div className="row" style={{"width": "10%"}}>
-                  <div className="button" id="subscribe">
-                     SEND
-                  </div>
-               </div>
+            <div id="s-headline">
+               <h2>Subscribe To Our Newsletter</h2>
+            </div>
+            <br />
+            <input id="s-input" type="text" name="" className="textInput" placeholder="Enter your email" style={{width: '60%'}} />
+            <br /> <br /> <br />
+            <div className="button purple-btn" id="subscribe" style={{padding: '15px 45px'}}>
+               SEND
+            </div>
          </center>
       </div>
       <div id="want-to-contact" className="f-container purple-bg">
          <div className="content">
-            <h1 style={{"color": "white", "fontSize": "24px", "letterSpacing": "5px"}}>WANT TO DISCUSS YOUR NEW PROJECT?</h1>
+            <h1 id="discuss-headline" style={{"color": "white", "fontSize": "24px", "letterSpacing": "5px"}}>WANT TO DISCUSS YOUR NEW PROJECT?</h1>
             <br />
-            <a href="#contact" className="button">CONTACT US</a>
+            <a id="discuss-p" href="#contact" className="button">CONTACT US</a>
          </div>
       </div>
       <div id="testimonials" className="f-container" style={{backgroundColor: "rgb(0, 0, 0)"}}>

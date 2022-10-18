@@ -1,3 +1,46 @@
+@media only screen and (min-width: 800px) {
+   .our-abilities{
+      grid-template-columns: auto;
+   }
+
+   .services-grid{
+      grid-template-columns: auto;
+   }
+
+   .team-card-container{
+      grid-template-columns: auto;
+   }
+
+   .projects-container{
+      grid-template-columns: auto;
+   }
+
+   .projects-container .grid-item{
+      min-width: 100vw;
+   }
+}
+
+@media only screen and (min-width: 900px) {
+   .our-abilities{
+      grid-template-columns: auto auto auto;
+   }
+
+   .services-grid{
+      grid-template-columns: auto auto auto;
+   }
+
+   .team-card-container{
+      grid-template-columns: auto auto auto;
+   }
+
+   .projects-container{
+      grid-template-columns: auto auto auto auto;
+   }
+
+   .projects-container .grid-item{
+      min-width: 20vw;
+   }
+}
 
 .line{
    display: block;
@@ -90,7 +133,6 @@ html {
 
 .our-abilities{
    display: grid;
-   grid-template-columns: auto auto auto;
 }
 
 .our-abilities h1{
@@ -164,11 +206,11 @@ html {
    width: 80%;
    display: grid;
    grid-gap: 60px;
-   grid-template-columns: auto auto auto;
 }
 
 .team-card-container .card{
    width: 20vw;
+   min-width: 400px;
    height: 50vh;
    overflow: hidden;
 }
@@ -326,12 +368,12 @@ html {
    color: white;
 }
 
-#subscribe{
+.purple-btn{
    color: #AD00FF;
    border: 3px solid #AD00FF;
 }
 
-#subscribe:hover{
+.purple-btn:hover{
    background-color: #AD00FF;
    color: white;
 }
@@ -387,7 +429,6 @@ html {
 
 .projects-container{
    display: grid;
-   grid-template-columns: auto auto auto auto;
 }
 
 .projects-container .grid-item{
@@ -462,8 +503,8 @@ html {
 body { font-family: "Montserrat", sans-serif; }
 
 body p{
-   font-size: 14px;
-   line-height: 2em;
+   font-size: 20px;
+   line-height: 1.5em;
    font-weight: 300;
    text-align: center
 }
@@ -495,6 +536,10 @@ body p{
    width: 100vw;
    height: 100vh;
    background-size: cover;
+}
+
+#s-headline, #s-input, #subscribe{
+   opacity: 0;
 }
 
 a:link { text-decoration: none; }

@@ -18,10 +18,11 @@ export default function Service(){
          </div>
       </div>
       <div id="get-started" className="f-container purple-bg">
-         <div className="content">
+         <div className="content" id="started-headline">
             <h1 style={{"color": "white", "letterSpacing": "8px"}}>WE CREATE <span>AWESOME</span> PROJECTS</h1>
          </div>
-         <a href="/" className="button">
+         <br />
+         <a href="/" id="started-btn" className="button">
             GET STARTED
          </a>
       </div>

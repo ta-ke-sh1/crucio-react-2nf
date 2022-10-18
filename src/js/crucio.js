@@ -23,6 +23,9 @@ export default function Crucio(){
 
    var numbersLoad = false
    var landed = false;
+   var subscribe = false;
+   var services = false;
+   var discuss = false;
 
    const loadTrigger = () => {
       if (!landed) {
@@ -54,6 +57,25 @@ export default function Crucio(){
                }
             });
          })
+      }
+
+      if (scrolledToSection($('#get-started')) && !services) {
+         services = true;
+         document.getElementById('started-headline').classList.add('leftToRight');
+         document.getElementById('started-btn').classList.add('bottomToTop');
+      }
+
+      if (scrolledToSection($('#subscribe')) && !subscribe) {
+         subscribe = true;
+         document.getElementById('s-input').classList.add('leftToRight');
+         document.getElementById('s-headline').classList.add('topToBottom');
+         document.getElementById('subscribe').classList.add('bottomToTop');
+      }
+
+      if (scrolledToSection($('#want-to-contact')) && !discuss) {
+         discuss = true;
+         document.getElementById('discuss-headline').classList.add('leftToRight');
+         document.getElementById('discuss-p').classList.add('bottomToTop');
       }
    }
 

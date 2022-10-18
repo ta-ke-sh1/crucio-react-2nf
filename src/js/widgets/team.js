@@ -8,7 +8,7 @@ export default function Team(){
             <h1>OUR TEAM</h1>
             <div className="line"></div>
             <div className="team-card-container">
-              {members.map((item) => <Card key={item.name} name={item.name} position={item.position} imgUrl={item.imgUrl} />)}
+              {members.map((item) => <Card id={item.id} key={item.name} name={item.name} position={item.position} imgUrl={item.imgUrl} />)}
             </div>
          </div>
       </div>
@@ -40,29 +40,32 @@ export default function Team(){
 
 const Card = (props) => {
    return(
-      <div className="card">
+      <div className="card" >
          <div className="info">
             <h1>{props.name}</h1>
             <p>{props.position}</p>
             <IconRow/>
          </div>
-         <div className="image" style={{"backgroundImage": props.imgUrl}}></div>
+         <div id={props.id} className="image" style={{"backgroundImage": props.imgUrl}}></div>
       </div>
    )
 }
 
 const members = [
    { 
+      "id":"card-1",
       "name":"SAMANTHA L.",
       "position":"Architect",
       "imgUrl":"url(./assets/team/team1.jpg)",
    },
    { 
+      "id":"card-2",
       "name":"PAMELA K.",
       "position":"Designer",
       "imgUrl":"url(./assets/team/team2.jpg)",
    },
    { 
+      "id":"card-3",
       "name":"MICHAEL J.",
       "position":"Planner",
       "imgUrl":"url(./assets/team/team3.jpg)",
